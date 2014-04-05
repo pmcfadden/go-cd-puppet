@@ -18,7 +18,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.network :forwarded_port, guest: 8153, host: 8153
 
   config.hostmanager.enabled = true
-  config.hostmanager.manage_host = true
   config.hostmanager.aliases = %w(vagrant-centos64.vagrantup.com)
 
   config.vm.provision 'shell', inline: 'sudo yum install puppet -y'
