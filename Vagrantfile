@@ -23,5 +23,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.provision 'shell', inline: 'sudo yum install puppet -y'
 
   config.vm.provision :hostmanager
-  config.vm.provision :puppet
+  config.vm.provision :puppet do |puppet|
+    puppet.module_path = 'modules'
+    puppet.options = '--verbose --debug'
+  end
 end
