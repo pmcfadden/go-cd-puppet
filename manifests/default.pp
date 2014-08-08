@@ -1,2 +1,2 @@
-include go_server
-include go_agent
+class { 'go_server': }
+class { 'go_agent': }
